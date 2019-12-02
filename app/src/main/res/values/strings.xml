@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="rule_password">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`?!"￡$%^*()~=#{}[];':,./?/*-_+&#060;&#062;&#064;&#038;</string>
+</resources>

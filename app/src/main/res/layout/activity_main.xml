@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称:"
+                android:textSize="20sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机号:"
+                android:textSize="20sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/ser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="序列号:"
+                android:textSize="20sp"
+                android:textColor="#000"/>
+
+            <Button
+                android:id="@+id/diji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="微信跳转"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/zijian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="检查微信"
+                android:textSize="20sp" />
+
+
+            <Button
+                android:id="@+id/btn_getRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取Root" />
+
+            <Button
+                android:id="@+id/btn_getFriendMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取好友信息" />
+
+            <Button
+                android:id="@+id/btn_getMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取聊天信息" />
+
+            <Button
+                android:id="@+id/btn_getNewFriend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取添加信息" />
+
+            <Button
+                android:id="@+id/btn_getChatRoomList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取群列表" />
+
+            <Button
+                android:id="@+id/btn_getChatRoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取群成员列表" />
+
+            <Button
+                android:id="@+id/btn_getSnsMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取朋友圈信息" />
+
+            <Button
+                android:id="@+id/qutoutiaoLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="趣头条登录" />
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageq"/>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+
+</LinearLayout>

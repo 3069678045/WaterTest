@@ -1,0 +1,114 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.chaquo.python'
+
+android {
+    compileSdkVersion VERSION_COMPILE_SDK
+    buildToolsVersion VERSION_BUILD_TOOLS
+    defaultConfig {
+        applicationId "top.lhx.myapp"
+        minSdkVersion VERSION_MIN_SDK
+        targetSdkVersion VERSION_TARGET_SDK
+        versionCode 1
+        versionName "1.0"
+        sourceSets.main {
+            jniLibs.srcDir 'src/main/libs'
+            jni.srcDirs = [] //disable automatic ndk-build call
+        }
+
+        python {
+            buildPython "C:/Users/Mr.Li/AppData/Local/Programs/Python/Python36/python.exe"
+            pip{
+                options "--extra-index-url","http://192.168.1.200:9999","--trusted-host","192.168.1.200"
+                install "airtest-cust"
+            }
+        }
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+    }
+    sourceSets.main {
+        jniLibs.srcDir 'src/main/libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
+}
+
+// 这一行必须放在 android{} 之后用来读取applicationId
+apply plugin: 'replugin-host-gradle'
+
+/**
+ * 配置项均为可选配置，默认无需添加
+ * 更多可选配置项参见replugin-host-gradle的RepluginConfig类
+ * 可更改配置项参见 自动生成RePluginHostConfig.java
+ */
+repluginHostConfig {
+    /**
+     * 是否使用 AppCompat 库
+     * 不需要个性化配置时，无需添加
+     */
+    useAppCompat = true
+    // 设置为“不需要常驻进程”
+    persistentEnable = false
+    /**
+     * 背景不透明的坑的数量
+     * 不需要个性化配置时，无需添加
+     */
+//    countNotTranslucentStandard = 6
+//    countNotTranslucentSingleTop = 2
+//    countNotTranslucentSingleTask = 3
+//    countNotTranslucentSingleInstance = 2
+}
+
+    
+
+dependencies {
+    // region 本机jar包与so库文件
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // endregion
+    // region maven 依赖项(编译与运行)
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.qihoo360.replugin:replugin-host-lib:2.2.4'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.rabbitmq:amqp-client:5.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    //界面传值
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    // 添加库
+    // 加密的sqlite 读取库
+    implementation 'net.zetetic:android-database-sqlcipher:4.2.0@aar'
+    // dom元素解析库, 解析xml数据用
+    implementation 'dom4j:dom4j:1.6.1'
+    implementation 'com.github.liujin-jeremy:ObjectBus:2.3.0'
+    implementation(name: 'armv7a-armv8a-release', ext: 'aar')
+    // region maven 依赖项(测试)
+    testImplementation 'junit:junit:4.12'
+    // endregion
+    // https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-jpeg
+    implementation 'com.twelvemonkeys.imageio:imageio-jpeg:3.4.1'
+
+}
+
+greendao {
+    schemaVersion 1 //当前数据库版本
+}

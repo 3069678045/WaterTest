@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="49dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="账号登录"
+                android:textColor="#252525"
+                android:textSize="18dp"/>
+    </RelativeLayout>
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#e6e6e6"/>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="40dp">
+
+        <TextView
+                android:id="@+id/textphoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="账号"
+                android:textColor="#333333"
+                android:textSize="18dp"/>
+
+        <EditText
+                android:id="@+id/et_login_phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textphoneNumber"
+                android:background="@null"
+                android:hint="请输入账号"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textColor="#333333"
+                android:textSize="18dp"/>
+    </RelativeLayout>
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#e6e6e6"/>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="58dp">
+
+        <TextView
+                android:id="@+id/textpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="密码"
+                android:textColor="#333333"
+                android:textSize="18dp"/>
+
+        <EditText
+                android:id="@+id/et_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toLeftOf="@+id/imagqk"
+                android:layout_toRightOf="@+id/textpassword"
+                android:digits="@string/rule_password"
+                android:background="@null"
+                android:hint="请输入密码"
+                android:maxLength="18"
+                android:password="true"
+                android:textColor="#262626"
+                android:textSize="18dp"/>
+
+        <ImageView
+                android:id="@+id/imagqk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/login_input_delet"/>
+    </RelativeLayout>
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#e6e6e6"/>
+
+    <RelativeLayout
+            android:id="@+id/btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/fbyhq">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="登录"
+                android:textColor="#ffffff"
+                android:textSize="18dp"/>
+    </RelativeLayout>
+</LinearLayout>
