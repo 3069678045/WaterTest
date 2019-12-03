@@ -6,7 +6,7 @@ android {
     compileSdkVersion VERSION_COMPILE_SDK
     buildToolsVersion VERSION_BUILD_TOOLS
     defaultConfig {
-        applicationId "top.lhx.myapp"
+        applicationId "com.heyi.testing"
         minSdkVersion VERSION_MIN_SDK
         targetSdkVersion VERSION_TARGET_SDK
         versionCode 1
